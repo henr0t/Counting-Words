@@ -67,12 +67,12 @@ public class WordCounter extends UserInput implements WordFrequency, WordFrequen
         setTextToArray(text);
         ArrayList<WordFrequency> wordFrequencyList = new ArrayList<WordFrequency>();
 
+
         loop:
         for (String word : wordsArr) {
             calculateFrequencyForWord(text, word);
-
             for (WordFrequency wf : wordFrequencyList) {
-                if (wf.getWord().equals(word)) {
+                if (wf.getWord().equalsIgnoreCase(word)) {
                     continue loop;
                 }
             }
